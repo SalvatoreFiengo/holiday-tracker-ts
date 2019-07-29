@@ -58,17 +58,17 @@ class HolidayTracker extends React.Component<IProps,IState> {
             <Nav className="w-50 pr-5" navbar pills>
               <NavItem className="mx-auto">
                   <NavLink href="#">
-                      Home
+                      HOME
                   </NavLink>
               </NavItem>
               <NavItem className="mx-auto">
                   <NavLink href="#">
-                      New
+                      NEW
                   </NavLink>
               </NavItem>
               <NavItem className="mx-auto">
                   <NavLink href="#">
-                      Credits
+                      CREDITS
                   </NavLink>
               </NavItem>
               <NavItem className="mx-auto">
