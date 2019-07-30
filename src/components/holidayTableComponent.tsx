@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import {Table} from 'reactstrap';
+import {Table, Button} from 'reactstrap';
 import Iuser from '../interfaces/Iusers';
 type Props = {
     user: [Iuser],
-    date: string
+    date: string,
+    month: string,
+    prev:(count:number)=>void,
+    next:(count:number)=>void,
+    count:number
 };
 class HolidayTableComponent extends Component<Props>{
     render(){
@@ -12,7 +16,19 @@ class HolidayTableComponent extends Component<Props>{
             <Table className="text-center">
                 <thead>
                     <tr>
-                        <th>Holidays</th>
+                        <th colSpan={3}>Today is {this.props.date.slice(0,15)}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <Button onClick={()=>{
+                            this.props.prev(this.props.count)
+                            }}
+                            >Prev</Button>
+                        </th><th>Holidays in {this.props.month}</th>
+                        <th><Button onClick={()=>{
+                            this.props.next(this.props.count)
+                            }}
+                            >next</Button></th>
                     </tr>
                 </thead>
                 <tbody>
